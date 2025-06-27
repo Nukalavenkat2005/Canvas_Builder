@@ -1,4 +1,5 @@
-const API_BASE = 'http://localhost:3000/api/canvas';
+const API_BASE = 'https://canvas-builder-4.onrender.com/api/canvas';
+
 
 function showStatus(message, isError = false) {
     const status = document.getElementById('status');
