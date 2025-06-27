@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Canvas Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Canvas Builder</h1>
+            <p>Create amazing graphics and export as PDF</p>
+        </div>
+
+        <div class="content">
+            <div class="controls">
+                <!-- Canvas Setup -->
+                <div class="section">
+                    <h2>📐 Canvas Setup</h2>
+                    <div class="input-row">
+                        <input type="number" id="canvasWidth" placeholder="Width" value="800">
+                        <input type="number" id="canvasHeight" placeholder="Height" value="600">
+                    </div>
+                    <button onclick="initializeCanvas()">Initialize Canvas</button>
+                </div>
+
+                <!-- Rectangle -->
+                <div class="element-group">
+                    <h3>🟦 Rectangle</h3>
+                    <div class="input-row">
+                        <input type="number" id="rectX" placeholder="X" value="50">
+                        <input type="number" id="rectY" placeholder="Y" value="50">
+                        <input type="number" id="rectWidth" placeholder="Width" value="100">
+                        <input type="number" id="rectHeight" placeholder="Height" value="100">
+                        <input type="color" id="rectColor" value="#ff4757">
+                    </div>
+                    <button onclick="addRectangle()">Add Rectangle</button>
+                </div>
+
+                <!-- Circle -->
+                <div class="element-group">
+                    <h3>⭕ Circle</h3>
+                    <div class="input-row">
+                        <input type="number" id="circleX" placeholder="X" value="200">
+                        <input type="number" id="circleY" placeholder="Y" value="100">
+                        <input type="number" id="circleRadius" placeholder="Radius" value="50">
+                        <input type="color" id="circleColor" value="#2ed573">
+                    </div>
+                    <button onclick="addCircle()">Add Circle</button>
+                </div>
+
+                <!-- Text -->
+                <div class="element-group">
+                    <h3>📝 Text</h3>
+                    <div class="input-row">
+                        <input type="text" id="textContent" placeholder="Text" value="Hello World">
+                        <input type="number" id="textX" placeholder="X" value="300">
+                        <input type="number" id="textY" placeholder="Y" value="100">
+                        <input type="number" id="textSize" placeholder="Font Size" value="24">
+                        <input type="color" id="textColor" value="#3742fa">
+                    </div>
+                    <button onclick="addText()">Add Text</button>
+                </div>
+
+                <!-- Image -->
+                <div class="element-group">
+                    <h3>🖼️ Image (URL)</h3>
+                    <div class="input-row">
+                        <input type="text" id="imageUrl" placeholder="Image URL" value="https://via.placeholder.com/150">
+                        <input type="number" id="imageX" placeholder="X" value="100">
+                        <input type="number" id="imageY" placeholder="Y" value="100">
+                        <input type="number" id="imageWidth" placeholder="Width" value="150">
+                        <input type="number" id="imageHeight" placeholder="Height" value="150">
+                    </div>
+                    <button onclick="addImageFromURL()">Add Image</button>
+                </div>
+            </div>
+
+            <!-- Preview -->
+            <div class="preview-area">
+                <h2>👀 Canvas Preview</h2>
+                <div id="status" class="status"></div>
+                <canvas id="previewCanvas" width="800" height="600"></canvas>
+                <div class="canvas-controls">
+                    <button onclick="updatePreview()">🔄 Update</button>
+                    <button onclick="clearCanvas()">🗑️ Clear</button>
+                    <button onclick="exportToPDF()">📄 Export PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
